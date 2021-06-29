@@ -1,6 +1,6 @@
 import {useNavigation, useRoute} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList} from 'react-native';
 import {FAB} from 'react-native-paper';
 import {RouteProp} from '@react-navigation/native';
 import ItemComponent from './ItemComponent';
