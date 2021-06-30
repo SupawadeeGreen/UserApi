@@ -48,19 +48,21 @@ const Home = () => {
   }, [data.length, route.params]);
 
   return (
-    <Screen style={{flex: 1}}>
+    <Screen>
       <FlatList
         data={data}
         keyExtractor={(item: Data) => (item?.id ? item.id.toString() : '')}
         renderItem={({item}) => {
           return (
-            <ListView style={{}}>
+            <ListView>
               <ItemComponent
                 name={item.name}
                 username={item.username}
                 email={item.email}
                 onDelete={() => {
-                  const newData = data.filter(i => i.id !== item.id);
+                  const newData = data.filter(
+                    (target: Data) => target.id !== item.id,
+                  );
                   setData(newData);
                 }}
               />
